@@ -11,10 +11,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/login', // Define a rota inicial como o login
+      initialRoute: '/login', 
       routes: {
-        '/login': (context) => LoginScreen(), // Define a rota para a tela de login
-        '/home': (context) => SportyHomePage(), // Define a rota para a tela principal
+        '/login': (context) => LoginScreen(), 
+        '/home': (context) => SportyHomePage(), 
       },
     );
   }

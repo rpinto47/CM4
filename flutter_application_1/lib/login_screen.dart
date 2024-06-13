@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 import 'sporty_home_page.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
+  @override
+  _LoginScreenState createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  String errorText = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,6 +33,7 @@ class LoginScreen extends StatelessWidget {
               ),
               SizedBox(height: 20),
               TextField(
+                controller: emailController,
                 decoration: InputDecoration(
                   labelText: 'Email',
                   prefixIcon: Icon(Icons.email),
@@ -34,6 +44,7 @@ class LoginScreen extends StatelessWidget {
               ),
               SizedBox(height: 20),
               TextField(
+                controller: passwordController,
                 obscureText: true,
                 decoration: InputDecoration(
                   labelText: 'Password',
@@ -54,11 +65,16 @@ class LoginScreen extends StatelessWidget {
               SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
-                  // Navegar para a tela '/home' quando o botão de login é pressionado
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => SportyHomePage()),
-                  );
+                  if (emailController.text.isEmpty || passwordController.text.isEmpty) {
+                    setState(() {
+                      errorText = 'Email or Password cannot be empty';
+                    });
+                  } else {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => SportyHomePage()),
+                    );
+                  }
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.teal,
@@ -77,7 +93,7 @@ class LoginScreen extends StatelessWidget {
                   Text("Don't have an account ?"),
                   TextButton(
                     onPressed: () {
-                      // Implemente a navegação para a tela de registro ou signup aqui
+                      // Registo
                     },
                     child: Text(
                       'Sign up',
@@ -86,6 +102,12 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ],
               ),
+              SizedBox(height: 10),
+              if (errorText.isNotEmpty)
+                Text(
+                  errorText,
+                  style: TextStyle(color: Colors.red),
+                ),
             ],
           ),
         ),
