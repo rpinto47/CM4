@@ -1,10 +1,10 @@
-name: login_screen
+name: sporty_application
 description: A new Flutter project.
 
 
 publish_to: 'none'
 
-version: 1.0.0+1
+version: 0.1.0
 
 environment:
   sdk: ">=3.0.0 <4.0.0"
@@ -19,11 +19,20 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_lints: ^3.0.0
 
 flutter:
-  
   uses-material-design: true
 
 
+
+# Assets
   assets:
-    - assets/logo.png  
+    - assets/background.jpg
+    - assets/chita.png
+    - assets/logo.png
+    - assets/megafone.png
+    - assets/paths.png
+    - assets/medal.png
+    - assets/flag.png
+    - assets/button.png

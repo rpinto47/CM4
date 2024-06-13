@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'sporty_home_page.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -10,7 +11,7 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Image.asset('assets/logo.png', height: 100), 
+              Image.asset('assets/logo.png', height: 100),
               SizedBox(height: 20),
               Text(
                 'Login',
@@ -52,15 +53,21 @@ class LoginScreen extends StatelessWidget {
               ),
               SizedBox(height: 20),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  // Navegar para a tela '/home' quando o botão de login é pressionado
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => SportyHomePage()),
+                  );
+                },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.teal, 
+                  backgroundColor: Colors.teal,
                   padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
                   textStyle: TextStyle(fontSize: 18),
                 ),
-               child: Text(
+                child: Text(
                   'Login',
-                  style: TextStyle(color: Colors.white), 
+                  style: TextStyle(color: Colors.white),
                 ),
               ),
               SizedBox(height: 20),
@@ -69,7 +76,9 @@ class LoginScreen extends StatelessWidget {
                 children: <Widget>[
                   Text("Don't have an account ?"),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      // Implemente a navegação para a tela de registro ou signup aqui
+                    },
                     child: Text(
                       'Sign up',
                       style: TextStyle(color: Colors.teal),
