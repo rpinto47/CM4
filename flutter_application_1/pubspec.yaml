@@ -28,7 +28,7 @@ flutter:
 
 # Assets
   assets:
-    - assets/background.jpg
+    - assets/background.png
     - assets/chita.png
     - assets/logo.png
     - assets/megafone.png

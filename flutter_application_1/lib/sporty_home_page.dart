@@ -20,10 +20,10 @@ class _SportyHomePageState extends State<SportyHomePage> {
       body: Stack(
         children: [
           Container(
-            height: 600,
+            height: 1500,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('assets/background.jpg'),
+                image: AssetImage('assets/background.png'),
                 fit: BoxFit.cover,
               ),
             ),
@@ -70,7 +70,7 @@ class _SportyHomePageState extends State<SportyHomePage> {
                         child: Image.asset('assets/button.png', width: 100),
                       ),
                       if (_showButtons) ...[
-                        SizedBox(height: 20),
+                        SizedBox(height: 50),
                         Wrap(
                           spacing: 20,
                           children: [
