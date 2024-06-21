@@ -5,58 +5,52 @@ class CustomizationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Sporty'),
+        backgroundColor: Colors.teal,
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pop(context);
           },
         ),
+        title: Text('Sporty', style: TextStyle(fontSize: 24)),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            Text(
-              'Customize',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Row(
+              children: [
+                Image.asset('assets/hat.png', width: 40, height: 40),
+                SizedBox(width: 10),
+                Text('Customize', style: TextStyle(fontSize: 24)),
+              ],
             ),
-            SizedBox(height: 20),
-            Expanded(
-              child: GridView.count(
-                crossAxisCount: 2,
-                children: [
-                  _buildCustomizationItem('assets/headphones.png'),
-                  _buildCustomizationItem('assets/cap.png'),
-                  _buildCustomizationItem('assets/glasses.png', selected: true),
-                  _buildCustomizationItem('assets/watch.png'),
-                  _buildCustomizationItem('assets/helmet.png'),
-                  _buildCustomizationItem('assets/sunglasses.png'),
-                ],
-              ),
+          ),
+          Expanded(
+            child: GridView.count(
+              crossAxisCount: 2,
+              padding: const EdgeInsets.all(16.0),
+              crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              children: [
+                _buildGridItem('assets/headphones.png'),
+                _buildGridItem('assets/cap.png'),
+                _buildGridItem('assets/glasses.png'),
+                _buildGridItem('assets/watch.png'),
+                _buildGridItem('assets/helmet.png'),
+                _buildGridItem('assets/sunglasses.png'),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
 
-  Widget _buildCustomizationItem(String assetPath, {bool selected = false}) {
+  Widget _buildGridItem(String assetPath) {
     return Card(
-      elevation: selected ? 10 : 2,
-      shape: RoundedRectangleBorder(
-        side: BorderSide(
-          color: selected ? Colors.blue : Colors.transparent,
-          width: 2,
-        ),
-        borderRadius: BorderRadius.circular(8),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Image.asset(assetPath),
+      child: Center(
+        child: Image.asset(assetPath, fit: BoxFit.cover),
       ),
     );
   }

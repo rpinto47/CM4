@@ -14,8 +14,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/login', 
       routes: {
-        '/login': (context) => CustomizationScreen(), 
-        '/home': (context) => SportyHomePage(), 
+        '/login': (context) => LoginScreen(), 
+        '/home': (context) => SportyHomePage(),
+        '/customize': (context) => CustomizationScreen(),
       },
     );
   }
