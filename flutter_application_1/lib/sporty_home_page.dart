@@ -83,38 +83,49 @@ class _SportyHomePageState extends State<SportyHomePage> {
                           spacing: 20,
                           children: [
                             Container(
-                              width: 80,
-                              height: 80,
+                              width: 105,
+                              height: 105,
                               child: IconButton(
                                 icon: Image.asset('assets/megafone.png'),
-                                iconSize: 80,
+                                iconSize: 100,
                                 onPressed: () {},
                               ),
                             ),
                             Container(
-                              width: 80,
-                              height: 80,
+                              width: 105,
+                              height: 105,
                               child: IconButton(
                                 icon: Image.asset('assets/paths.png'),
-                                iconSize: 80,
+                                iconSize: 100,
                                 onPressed: () {},
                               ),
                             ),
                             Container(
-                              width: 80,
-                              height: 80,
+                              width: 100,
+                              height: 100,
                               child: IconButton(
                                 icon: Image.asset('assets/medal.png'),
-                                iconSize: 80,
+                                iconSize: 100,
                                 onPressed: () {},
                               ),
                             ),
                             Container(
-                              width: 80,
-                              height: 80,
+                              width: 105,
+                              height: 105,
+                              child: IconButton(
+                                icon: Image.asset('assets/hat.png'),
+                                iconSize: 100,
+                                onPressed: () {
+                                  Navigator.pushNamed(context, '/customize');
+                                },
+                              ),
+                            ),
+                            Container(
+                              width: 85,
+                              height: 85,
                               child: IconButton(
                                 icon: Image.asset('assets/flag.png'),
-                                iconSize: 80,
+                                iconSize: 100,
                                 onPressed: () {},
                               ),
                             ),
