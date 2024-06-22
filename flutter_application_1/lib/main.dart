@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'login_screen.dart';
 import 'sporty_home_page.dart';
-import 'customization_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,9 +11,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: '/login', 
+      initialRoute: '/home', 
       routes: {
-        '/login': (context) => CustomizationScreen(), 
         '/home': (context) => SportyHomePage(), 
       },
     );

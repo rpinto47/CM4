@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'sideMenu/side_menu.dart';
 class SportyHomePage extends StatefulWidget {
   @override
   _SportyHomePageState createState() => _SportyHomePageState();
@@ -7,6 +7,7 @@ class SportyHomePage extends StatefulWidget {
 
 class _SportyHomePageState extends State<SportyHomePage> {
   bool _showButtons = false;
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   void _toggleButtons() {
     setState(() {
@@ -17,6 +18,8 @@ class _SportyHomePageState extends State<SportyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
+      drawer: SideMenu(),
       body: Stack(
         children: [
           Container(
@@ -38,7 +41,12 @@ class _SportyHomePageState extends State<SportyHomePage> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Icon(Icons.menu, color: Colors.white),
+                    IconButton(
+                      icon: Icon(Icons.menu, color: Colors.white),
+                      onPressed: () {
+                        _scaffoldKey.currentState!.openDrawer();
+                      },
+                    ),
                     Row(
                       children: [
                         Text(
@@ -53,7 +61,7 @@ class _SportyHomePageState extends State<SportyHomePage> {
                         Image.asset('assets/logo.png', width: 35),
                       ],
                     ),
-                    SizedBox(width: 24), 
+                    SizedBox(width: 24),
                   ],
                 ),
               ),
@@ -63,7 +71,7 @@ class _SportyHomePageState extends State<SportyHomePage> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Image.asset('assets/chita.png', width: 350), 
+                      Image.asset('assets/chita.png', width: 350),
                       SizedBox(height: 20),
                       GestureDetector(
                         onTap: _toggleButtons,
