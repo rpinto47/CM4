@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'sideMenu/side_menu.dart';
+
 class SportyHomePage extends StatefulWidget {
+  const SportyHomePage({super.key});
+
   @override
   _SportyHomePageState createState() => _SportyHomePageState();
 }
@@ -19,12 +22,12 @@ class _SportyHomePageState extends State<SportyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: _scaffoldKey,
-      drawer: SideMenu(),
+      drawer: const SideMenu(),
       body: Stack(
         children: [
           Container(
             height: 1500,
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                 image: AssetImage('assets/background.png'),
                 fit: BoxFit.cover,
@@ -37,19 +40,19 @@ class _SportyHomePageState extends State<SportyHomePage> {
               // App bar
               Container(
                 color: Colors.teal,
-                padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     IconButton(
-                      icon: Icon(Icons.menu, color: Colors.white),
+                      icon: const Icon(Icons.menu, color: Colors.white),
                       onPressed: () {
                         _scaffoldKey.currentState!.openDrawer();
                       },
                     ),
                     Row(
                       children: [
-                        Text(
+                        const Text(
                           'Sporty',
                           style: TextStyle(
                             color: Colors.white,
@@ -57,11 +60,11 @@ class _SportyHomePageState extends State<SportyHomePage> {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        SizedBox(width: 5),
+                        const SizedBox(width: 5),
                         Image.asset('assets/logo.png', width: 35),
                       ],
                     ),
-                    SizedBox(width: 24),
+                    const SizedBox(width: 24),
                   ],
                 ),
               ),
@@ -72,17 +75,17 @@ class _SportyHomePageState extends State<SportyHomePage> {
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Image.asset('assets/chita.png', width: 350),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       GestureDetector(
                         onTap: _toggleButtons,
                         child: Image.asset('assets/button.png', width: 100),
                       ),
                       if (_showButtons) ...[
-                        SizedBox(height: 50),
+                        const SizedBox(height: 50),
                         Wrap(
                           spacing: 20,
                           children: [
-                            Container(
+                            SizedBox(
                               width: 105,
                               height: 105,
                               child: IconButton(
@@ -91,7 +94,7 @@ class _SportyHomePageState extends State<SportyHomePage> {
                                 onPressed: () {},
                               ),
                             ),
-                            Container(
+                            SizedBox(
                               width: 105,
                               height: 105,
                               child: IconButton(
@@ -100,7 +103,7 @@ class _SportyHomePageState extends State<SportyHomePage> {
                                 onPressed: () {},
                               ),
                             ),
-                            Container(
+                            SizedBox(
                               width: 100,
                               height: 100,
                               child: IconButton(
@@ -109,7 +112,7 @@ class _SportyHomePageState extends State<SportyHomePage> {
                                 onPressed: () {},
                               ),
                             ),
-                            Container(
+                            SizedBox(
                               width: 105,
                               height: 105,
                               child: IconButton(
@@ -120,7 +123,7 @@ class _SportyHomePageState extends State<SportyHomePage> {
                                 },
                               ),
                             ),
-                            Container(
+                            SizedBox(
                               width: 85,
                               height: 85,
                               child: IconButton(

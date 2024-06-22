@@ -7,17 +7,19 @@ import 'sideMenuPages/resources_page.dart';
 import 'sideMenuPages/help_page.dart';
 
 class SideMenu extends StatelessWidget {
+  const SideMenu({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: Color(0xFF00D6A3),
+        color: const Color(0xFF00D6A3),
         child: Column(
           children: <Widget>[
             Container(
               height: 150,
-              color: Color(0xFF00D6A3),
-              child: Center(
+              color: const Color(0xFF00D6A3),
+              child: const Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
@@ -46,42 +48,42 @@ class SideMenu extends StatelessWidget {
               child: Container(
                 color: Colors.white,
                 child: ListView(
-                  padding: EdgeInsets.all(0),
+                  padding: const EdgeInsets.all(0),
                   children: <Widget>[
                     _createDrawerItem(
                       icon: Icons.volume_up,
                       text: 'Áudio',
-                      onTap: () => _navigateTo(context, AudioSettingsPage()),
+                      onTap: () => _navigateTo(context, const AudioSettingsPage()),
                     ),
                     _createDrawerItem(
                       icon: Icons.music_note,
                       text: 'Música',
-                      onTap: () => _navigateTo(context, MusicPage()),
+                      onTap: () => _navigateTo(context, const MusicPage()),
                     ),
                     _createDrawerItem(
                       icon: Icons.vibration,
                       text: 'Vibração',
-                      onTap: () => _navigateTo(context, VibrationPage()),
+                      onTap: () => _navigateTo(context, const VibrationPage()),
                     ),
                     _createDrawerItem(
                       icon: Icons.book,
                       text: 'Recursos',
-                      onTap: () => _navigateTo(context, ResourcesPage()),
+                      onTap: () => _navigateTo(context, const ResourcesPage()),
                     ),
                     _createDrawerItem(
                       icon: Icons.help,
                       text: 'Ajuda',
-                      onTap: () => _navigateTo(context, HelpPage()),
+                      onTap: () => _navigateTo(context, const HelpPage()),
                     ),
                   ],
                 ),
               ),
             ),
             Container(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xFF00D6A3),
+                  backgroundColor: const Color(0xFF00D6A3),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10.0),
                   ),
@@ -89,7 +91,7 @@ class SideMenu extends StatelessWidget {
                 onPressed: () {
                   Navigator.of(context).pop(); // Close the drawer
                 },
-                child: Text(
+                child: const Text(
                   'Logout',
                   style: TextStyle(color: Colors.white),
                 ),
@@ -114,10 +116,10 @@ class SideMenu extends StatelessWidget {
     required GestureTapCallback onTap,
   }) {
     return ListTile(
-      leading: Icon(icon, color: Color(0xFF00D6A3)),
+      leading: Icon(icon, color: const Color(0xFF00D6A3)),
       title: Text(
         text,
-        style: TextStyle(
+        style: const TextStyle(
           color: Colors.black,
         ),
       ),

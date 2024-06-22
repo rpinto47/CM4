@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'sporty_home_page.dart';
 
 class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
@@ -21,48 +23,48 @@ class _LoginScreenState extends State<LoginScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Image.asset('assets/logo.png', height: 100),
-              SizedBox(height: 20),
-              Text(
+              const SizedBox(height: 20),
+              const Text(
                 'Login',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 10),
-              Text(
+              const SizedBox(height: 10),
+              const Text(
                 'Please login to continue in our app',
                 style: TextStyle(fontSize: 16),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               TextField(
                 controller: emailController,
                 decoration: InputDecoration(
                   labelText: 'Email',
-                  prefixIcon: Icon(Icons.email),
+                  prefixIcon: const Icon(Icons.email),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               TextField(
                 controller: passwordController,
                 obscureText: true,
                 decoration: InputDecoration(
                   labelText: 'Password',
-                  prefixIcon: Icon(Icons.lock),
+                  prefixIcon: const Icon(Icons.lock),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                 ),
               ),
-              SizedBox(height: 10),
-              Align(
+              const SizedBox(height: 10),
+              const Align(
                 alignment: Alignment.centerRight,
                 child: Text(
                   'Forget Password?',
                   style: TextStyle(color: Colors.teal),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () {
                   if (emailController.text.isEmpty || passwordController.text.isEmpty) {
@@ -72,41 +74,41 @@ class _LoginScreenState extends State<LoginScreen> {
                   } else {
                     Navigator.pushReplacement(
                       context,
-                      MaterialPageRoute(builder: (context) => SportyHomePage()),
+                      MaterialPageRoute(builder: (context) => const SportyHomePage()),
                     );
                   }
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.teal,
-                  padding: EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-                  textStyle: TextStyle(fontSize: 18),
+                  padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                  textStyle: const TextStyle(fontSize: 18),
                 ),
-                child: Text(
+                child: const Text(
                   'Login',
                   style: TextStyle(color: Colors.white),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Text("Don't have an account ?"),
+                  const Text("Don't have an account ?"),
                   TextButton(
                     onPressed: () {
                       // Registo
                     },
-                    child: Text(
+                    child: const Text(
                       'Sign up',
                       style: TextStyle(color: Colors.teal),
                     ),
                   ),
                 ],
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               if (errorText.isNotEmpty)
                 Text(
                   errorText,
-                  style: TextStyle(color: Colors.red),
+                  style: const TextStyle(color: Colors.red),
                 ),
             ],
           ),

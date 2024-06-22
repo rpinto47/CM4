@@ -2,19 +2,21 @@
 import 'package:flutter/material.dart';
 
 class HelpPage extends StatelessWidget {
+  const HelpPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
+        title: const Center(
           child: Text(
             'Ajuda',
             style: TextStyle(color: Colors.white),
           ),
         ),
-        backgroundColor: Color(0xFF00D6A3),
+        backgroundColor: const Color(0xFF00D6A3),
       ),
-      body: Center(
+      body: const Center(
         child: Text(
           'Help Page',
           style: TextStyle(fontSize: 24),

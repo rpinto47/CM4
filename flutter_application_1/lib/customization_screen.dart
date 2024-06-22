@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 
 class CustomizationScreen extends StatelessWidget {
+  const CustomizationScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.teal,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back),
           onPressed: () {
             Navigator.pop(context);
           },
         ),
-        title: Text('Sporty', style: TextStyle(fontSize: 24)),
+        title: const Text('Sporty', style: TextStyle(fontSize: 24)),
       ),
       body: Column(
         children: [
@@ -21,8 +23,8 @@ class CustomizationScreen extends StatelessWidget {
             child: Row(
               children: [
                 Image.asset('assets/hat.png', width: 40, height: 40),
-                SizedBox(width: 10),
-                Text('Customize', style: TextStyle(fontSize: 24)),
+                const SizedBox(width: 10),
+                const Text('Customize', style: TextStyle(fontSize: 24)),
               ],
             ),
           ),
