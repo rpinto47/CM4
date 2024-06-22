@@ -53,7 +53,7 @@ class _SportyHomePageState extends State<SportyHomePage> {
                         Image.asset('assets/logo.png', width: 35),
                       ],
                     ),
-                    SizedBox(width: 24), 
+                    SizedBox(width: 24),
                   ],
                 ),
               ),
@@ -63,7 +63,7 @@ class _SportyHomePageState extends State<SportyHomePage> {
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Image.asset('assets/chita.png', width: 350), 
+                      Image.asset('assets/chita.png', width: 350),
                       SizedBox(height: 20),
                       GestureDetector(
                         onTap: _toggleButtons,
@@ -75,38 +75,49 @@ class _SportyHomePageState extends State<SportyHomePage> {
                           spacing: 20,
                           children: [
                             Container(
-                              width: 80,
-                              height: 80,
+                              width: 105,
+                              height: 105,
                               child: IconButton(
                                 icon: Image.asset('assets/megafone.png'),
-                                iconSize: 80,
+                                iconSize: 100,
                                 onPressed: () {},
                               ),
                             ),
                             Container(
-                              width: 80,
-                              height: 80,
+                              width: 105,
+                              height: 105,
                               child: IconButton(
                                 icon: Image.asset('assets/paths.png'),
-                                iconSize: 80,
+                                iconSize: 100,
                                 onPressed: () {},
                               ),
                             ),
                             Container(
-                              width: 80,
-                              height: 80,
+                              width: 100,
+                              height: 100,
                               child: IconButton(
                                 icon: Image.asset('assets/medal.png'),
-                                iconSize: 80,
+                                iconSize: 100,
                                 onPressed: () {},
                               ),
                             ),
                             Container(
-                              width: 80,
-                              height: 80,
+                              width: 105,
+                              height: 105,
+                              child: IconButton(
+                                icon: Image.asset('assets/hat.png'),
+                                iconSize: 100,
+                                onPressed: () {
+                                  Navigator.pushNamed(context, '/customize');
+                                },
+                              ),
+                            ),
+                            Container(
+                              width: 85,
+                              height: 85,
                               child: IconButton(
                                 icon: Image.asset('assets/flag.png'),
-                                iconSize: 80,
+                                iconSize: 100,
                                 onPressed: () {},
                               ),
                             ),
