@@ -3,6 +3,7 @@ import 'login_screen.dart';
 import 'sporty_home_page.dart';
 import 'customization_screen.dart';
 import 'createAccount_screen.dart';
+import 'recoverPassword_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
         '/home': (context) => const SportyHomePage(),
         '/customize': (context) => const CustomizationScreen(),
         '/createAccount': (context) => CreateAccountScreen(),
+        '/recoverPassword': (context) => RecoverPasswordScreen(),
       },
     );
   }

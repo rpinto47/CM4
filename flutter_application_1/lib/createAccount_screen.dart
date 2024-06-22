@@ -14,7 +14,6 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
   void _submitForm() {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
-      // Aqui você pode adicionar a lógica para criar a conta do usuário
       print('Nome: $_name, Email: $_email, Senha: $_password');
     }
   }
